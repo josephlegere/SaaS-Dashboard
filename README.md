@@ -1,5 +1,7 @@
 # Bizzyness-Dashboard
 
+Simple rendition of a Dashboard in a SaaS Application. Would include the summary of the services and provide links to the services itself. This sample would be applied to the Bizzyness App, a new kind of ERP system designed comfortability and ease in mind.
+
 ## Build Setup
 
 ```bash
