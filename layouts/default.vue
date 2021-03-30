@@ -75,4 +75,16 @@ export default {
 	.main {
 		background-color: #ffebd6;
 	}
+	.v-slide-group__prev {
+		position:					absolute;
+		height:						100%;
+		left:						0;
+		z-index:					1;
+	}
+	.v-slide-group__next {
+		position:					absolute;
+		height:						100%;
+		right:						0;
+		z-index:					1;
+	}
 </style>
