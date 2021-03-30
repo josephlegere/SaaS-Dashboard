@@ -3,8 +3,8 @@
 		<v-navigation-drawer
 			v-model="drawer"
 			fixed
+			temporary
 			right
-			app
 		>
 			<v-list>
 				<v-list-item
@@ -30,6 +30,8 @@
 			fixed
 			app
 			:height="45"
+			color="#5e3206"
+			dark
 		>
 			<v-app-bar-nav-icon />
 			<v-spacer></v-spacer>
@@ -71,6 +73,6 @@ export default {
 
 <style>
 	.main {
-		background-color: antiquewhite;
+		background-color: #ffebd6;
 	}
 </style>
