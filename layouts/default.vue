@@ -14,16 +14,33 @@
 					router
 					exact
 				>
-				<v-list-item-action>
-					<v-icon>{{ item.icon }}</v-icon>
-				</v-list-item-action>
-				<v-list-item-content>
-					<v-list-item-title v-text="item.title" />
-				</v-list-item-content>
+					<v-list-item-action>
+						<v-icon>{{ item.icon }}</v-icon>
+					</v-list-item-action>
+					<v-list-item-content>
+						<v-list-item-title v-text="item.title" />
+					</v-list-item-content>
+				</v-list-item>
+				<v-list-item>
+					<v-btn
+						color="primary"
+						class="mr-4"
+						@click="signOut"
+					>
+						Sign Out
+					</v-btn>
+				</v-list-item>
+
+				<v-spacer></v-spacer>
+
+				<v-list-item>
+					<v-list-item-content>
+						<span>&copy; {{ new Date().getFullYear() }}</span>
+					</v-list-item-content>
 				</v-list-item>
 			</v-list>
 
-			<span>&copy; {{ new Date().getFullYear() }}</span>
+			
 		</v-navigation-drawer>
 
 		<v-app-bar
@@ -67,6 +84,17 @@ export default {
 			],
 			title: 'Vuetify.js'
 		}
+	},
+	methods: {
+        signOut: function(err) {
+			this.$store.dispatch('auth/signOut')
+				.then(() => {
+					this.$router.replace({ path: '/login' });
+				})
+				.catch(err => {
+					alert(err.message);
+				});
+        }
 	}
 }
 </script>

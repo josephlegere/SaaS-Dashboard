@@ -24,7 +24,23 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    "~/plugins/vue-moment.js",
+    '~/plugins/localStorage.js'
   ],
+
+  // Router settings
+  router: {
+    middleware: ['authenticated']
+  },
+
+  pwa: {
+    workbox: {
+      importScripts: ['/firebase-auth-sw.js'],
+      // by default the workbox module will not install the service worker in dev environment to avoid conflicts with HMR
+      // only set this true for testing and remember to always clear your browser cache in development
+      dev: process.env.NODE_ENV === 'development'
+    }
+  },
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -37,6 +53,26 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    'cookie-universal-nuxt',
+    [
+      "@nuxtjs/firebase",
+      {
+        config: {
+          apiKey: process.env.NUXT_ENV_API_KEY,
+          authDomain: process.env.NUXT_ENV_AUTH_DOMAIN,
+          databaseURL: process.env.NUXT_ENV_DATABASE_URL,
+          projectId: process.env.NUXT_ENV_PROJECT_ID,
+          storageBucket: process.env.NUXT_ENV_STORAGE_BUCKET,
+          messagingSenderId: process.env.NUXT_ENV_MESSAGE_SENDER_ID,
+          appId: process.env.NUXT_ENV_APP_ID,
+          measurementId: process.env.NUXT_ENV_MEASUREMENT_ID
+        },
+        services: {
+          auth: true, // Just as example. Can be any other service.
+          firestore: true
+        }
+      }
+    ]
   ],
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
@@ -60,5 +96,9 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  },
+  
+  // dotenv
+  env: {
   }
 }
