@@ -55,19 +55,19 @@
 
 <script>
 export default {
-  data () {
-    return {
-      drawer: false,
-      items: [
-        {
-          icon: 'mdi-apps',
-          title: 'Welcome',
-          to: '/'
-        }
-      ],
-      title: 'Vuetify.js'
-    }
-  }
+	data () {
+		return {
+			drawer: false,
+			items: [
+				{
+					icon: 'mdi-apps',
+					title: 'Welcome',
+					to: '/'
+				}
+			],
+			title: 'Vuetify.js'
+		}
+	}
 }
 </script>
 
