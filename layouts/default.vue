@@ -82,7 +82,7 @@ export default {
 					to: '/'
 				}
 			],
-			title: 'Vuetify.js'
+			title: 'Bizzyness'
 		}
 	},
 	methods: {

@@ -141,13 +141,15 @@
 								<v-card-subtitle>Journaling, Invoicing & Transactions</v-card-subtitle>
 
 								<v-card-actions class="d-flex mt-auto">
-									<v-btn
-										outlined
-										rounded
-										small
-									>
-										Go To Accounting
-									</v-btn>
+									<a href="https://accounting.bizzyness.io/">
+										<v-btn
+											outlined
+											rounded
+											small
+										>
+											Go To Accounting
+										</v-btn>
+									</a>
 								</v-card-actions>
 							</div>
 
@@ -156,7 +158,7 @@
 								size="200"
 								tile
 							>
-								<v-img src="/images/accounting.jpg" alt="Accounting by Pexels"></v-img>
+								<v-img src="https://firebasestorage.googleapis.com/v0/b/bizzyness-ddf6e.appspot.com/o/accounting.jpg?alt=media&token=96747100-ed08-4c3f-9fa9-700846a842b9" alt="Accounting by Pexels"></v-img>
 							</v-avatar>
 						</div>
 					</v-card>
@@ -182,7 +184,7 @@
 								size="200"
 								tile
 							>
-								<v-img src="/images/employee.jpg" alt="Employee by Marc Mueller from Pexels"></v-img>
+								<v-img src="https://firebasestorage.googleapis.com/v0/b/bizzyness-ddf6e.appspot.com/o/employee.jpg?alt=media&token=7db55881-b3cb-4783-9a11-711a0a266b65" alt="Employee by Marc Mueller from Pexels"></v-img>
 							</v-avatar>
 
 							<div class="d-flex flex-column align-end">
@@ -195,13 +197,15 @@
 								<v-card-subtitle>Attendance, Payroll & Employees</v-card-subtitle>
 
 								<v-card-actions class="d-flex mt-auto">
-									<v-btn
-										outlined
-										rounded
-										small
-									>
-										Go To HR & Payroll
-									</v-btn>
+									<a href="https://hr.bizzyness.io/">
+										<v-btn
+											outlined
+											rounded
+											small
+										>
+											Go To HR & Payroll
+										</v-btn>
+									</a>
 								</v-card-actions>
 							</div>
 						</div>
@@ -236,14 +240,14 @@ export default {
 				title: 'Bizzyness, all your business needs',
 				text: 'Bizzyness is a new generation ERP. It has all the business receipes you need in your processes and work flow.',
 				background: 'primary',
-				image: '/images/meeting.jpg',
+				image: 'https://firebasestorage.googleapis.com/v0/b/bizzyness-ddf6e.appspot.com/o/meeting.jpg?alt=media&token=ecf9aeb5-563a-4d9d-a9a5-22110a75b5a9',
 				imageAlt: 'Meeting by Daria Shevtsova from Pexels'
 			},
 			{
 				title: 'This is Highlights',
 				text: 'While you were offline, this is the latest and relevant news and reports that has happened in the organization.',
 				background: 'secondary',
-				image: '/images/city.jpg',
+				image: 'https://firebasestorage.googleapis.com/v0/b/bizzyness-ddf6e.appspot.com/o/city.jpg?alt=media&token=9247dd95-da15-4912-bd97-0429828f13f2',
 				imageAlt: 'City by edwin josé vega ramos from Pexels'
 			},
 			{
