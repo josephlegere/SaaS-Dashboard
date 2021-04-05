@@ -1,7 +1,57 @@
 <template>
 	<v-app dark>
 		<v-navigation-drawer
-			v-model="drawer"
+			v-if="$nuxt.$route.path === '/'"
+			v-model="homeDrawer"
+			app
+			clipped
+			color="#ffebd6"
+		>
+		<v-list-item-group
+				v-model="linkCurrent"
+				mandatory
+				color="#914c06"
+			>
+			<v-list>
+				<v-list-item
+					v-for="(link, i) in links"
+					:key="i"
+				>
+					<v-list-item-content>
+						<v-list-item-title v-text="link.text" class="text-center" @click="$vuetify.goTo(link.target)"></v-list-item-title>
+					</v-list-item-content>
+				</v-list-item>
+			</v-list>
+			</v-list-item-group>
+		</v-navigation-drawer>
+
+		<v-app-bar
+			fixed
+			app
+			:height="45"
+			color="#5e3206"
+			dark
+			clipped-left
+		>
+			<v-app-bar-nav-icon v-if="$nuxt.$route.path === '/'" @click.stop="homeDrawer = !homeDrawer" />
+			<v-toolbar-title v-text="title" />
+			<v-spacer></v-spacer>
+			<v-btn
+				icon
+				@click.stop="mainDrawer = !mainDrawer"
+			>
+				<v-icon>mdi-account-circle</v-icon>
+			</v-btn>
+		</v-app-bar>
+		<v-main class="main">
+			
+			<!-- <v-container> -->
+			<nuxt />
+			<!-- </v-container> -->
+		</v-main>
+		
+		<v-navigation-drawer
+			v-model="mainDrawer"
 			fixed
 			temporary
 			right
@@ -39,29 +89,7 @@
 					</v-list-item-content>
 				</v-list-item>
 			</v-list>
-
-			
 		</v-navigation-drawer>
-
-		<v-app-bar
-			fixed
-			app
-			:height="45"
-			color="#5e3206"
-			dark
-		>
-			<v-app-bar-nav-icon />
-			<v-spacer></v-spacer>
-			<v-btn
-				icon
-				@click.stop="drawer = !drawer"
-			>
-				<v-icon>mdi-account-circle</v-icon>
-			</v-btn>
-		</v-app-bar>
-		<v-main class="main">
-			<nuxt />
-		</v-main>
 		<!-- <v-footer
 			app
 		>
@@ -74,14 +102,35 @@
 export default {
 	data () {
 		return {
-			drawer: false,
+			mainDrawer: false,
+			homeDrawer: true,
 			items: [
 				{
 					icon: 'mdi-apps',
 					title: 'Welcome',
 					to: '/'
+				},
+				{
+					icon: 'mdi-apps',
+					title: 'About',
+					to: '/about'
 				}
 			],
+			links: [
+				{
+					text: 'Home',
+					target: '#home-section'
+				},
+				{
+					text: 'Accounting',
+					target: '#accounting-section'
+				},
+				{
+					text: 'HR & Payroll',
+					target: '#hr-section'
+				}
+			],
+			linkCurrent: 0,
 			title: 'Bizzyness'
 		}
 	},

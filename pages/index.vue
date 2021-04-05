@@ -1,25 +1,9 @@
 <template>
 	<div style="height: 100%">
-		<v-list style="position: fixed; left: 0; top: 40%; width: 25%;" color="transparent">
-			<v-list-item-group
-				v-model="linkCurrent"
-				mandatory
-				color="#914c06"
-			>
-				<v-list-item
-					v-for="(link, i) in links"
-					:key="i"
-				>
-					<v-list-item-content>
-						<v-list-item-title v-text="link.text" class="text-center" @click="$vuetify.goTo(link.target)"></v-list-item-title>
-					</v-list-item-content>
-				</v-list-item>
-			</v-list-item-group>
-		</v-list>
 
 		<!-- Highlights, Your most recent and relevant news or reports in the organization, it's similar to Twitter Highlights  -->
 		<v-row id="home-section" class="page-section" justify="center" align="center" no-gutters>
-			<v-col class="content-wrapper d-flex" cols="12" sm="9" md="9" offset-sm="3" offset-md="3">
+			<v-col class="content-wrapper d-flex" cols="12" sm="9" md="9">
 				<v-sheet
 					height="100%"
 					max-width="100%"
@@ -118,7 +102,7 @@
 			</v-col>
 		</v-row>
 		<v-row id="accounting-section" class="page-section" justify="center" align="center" no-gutters>
-			<v-col cols="12" sm="9" md="9" offset-sm="3" offset-md="3" class="content-wrapper">
+			<v-col cols="12" sm="9" md="9" class="content-wrapper">
 				<v-sheet
 					class="d-flex py-md-10"
 					height="100%"
@@ -166,7 +150,7 @@
 			</v-col>
 		</v-row>
 		<v-row id="hr-section" class="page-section" justify="center" align="center" no-gutters>
-			<v-col cols="12" sm="9" md="9" offset-sm="3" offset-md="3" class="content-wrapper">
+			<v-col cols="12" sm="9" md="9" class="content-wrapper">
 				<v-sheet
 					class="d-flex py-md-10"
 					height="100%"
@@ -220,21 +204,6 @@
 
 export default {
 	data: () => ({
-		links: [
-			{
-				text: 'Home',
-				target: '#home-section'
-			},
-			{
-				text: 'Accounting',
-				target: '#accounting-section'
-			},
-			{
-				text: 'HR & Payroll',
-				target: '#hr-section'
-			}
-		],
-		linkCurrent: 0,
 		mainContent: [
 			{
 				title: 'Bizzyness, all your business needs',
